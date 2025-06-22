@@ -68,23 +68,16 @@
         const appState = {
             currentChatId: null, chatHistory: {}, settings: { theme: 'default', shouldThink: false }
         };
-
-        async function fetchKey() {
-            try {
-                const response = await fetch('key.txt?t=' + new Date().getTime());
-                if (!response.ok) return null;
-                return (await response.text());
-            } catch (e) {
-                return null;
-            }
-        }
         
+        // Функция fetchKey() больше не нужна, мы ее удалили.
+
         async function getAiResponse(prompt, history) {
-            // Читаем ключ и удаляем пробелы И невидимый символ BOM (\uFEFF)
-            const apiKey = (await fetchKey() || "").trim().replace(/^\uFEFF/, '');
+            // Ключ теперь находится прямо здесь.
+            // ВАЖНО: Вместо 'sk-or-v1...' вставьте ваш настоящий ключ!
+            const apiKey = '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';
             
             if (!apiKey || !apiKey.startsWith('sk-or')) {
-                 throw new Error("Ключ пустой или неверный. Проверьте содержимое файла key.txt.");
+                 throw new Error("API Ключ не вставлен в код или имеет неверный формат.");
             }
 
             const system_prompt = `Ты — Стери, дружелюбный и эмпатичный ИИ-помощник. Твоя главная задача — помочь, выслушать и поддержать разговор.`;
@@ -102,7 +95,6 @@
 
             if (!response.ok) {
                 const errorData = await response.json();
-                // Выводим более подробную ошибку от сервера
                 throw new Error(errorData.error.message || 'Неизвестная ошибка API');
             }
             const data = await response.json();
