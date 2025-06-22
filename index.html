@@ -6,191 +6,41 @@
     <title>Stery - Твой личный мир</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700&display=swap');
-
-        /* --- ОСНОВНЫЕ ПЕРЕМЕННЫЕ (Тема "Аура" по умолчанию) --- */
         :root {
-            --font-main: 'Inter', sans-serif;
-            --font-header: 'Inter', sans-serif;
-            --bg-image: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1f2e);
-            --sidebar-bg: rgba(20, 20, 35, 0.7);
-            --chat-bg: transparent;
-            --header-bg: rgba(35, 35, 55, 0.6);
-            --msg-user-bg: #4a4dff;
-            --msg-ai-bg: #30313f;
-            --accent-color: #8a7ffb;
-            --text-primary: #e0e1e6;
-            --text-secondary: #9a9caf;
-            --border-color: rgba(108, 93, 211, 0.2);
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --backdrop-blur: blur(12px);
+            --font-main: 'Inter', sans-serif; --font-header: 'Inter', sans-serif; --bg-image: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1f2e); --sidebar-bg: rgba(20, 20, 35, 0.7); --chat-bg: transparent; --header-bg: rgba(35, 35, 55, 0.6); --msg-user-bg: #4a4dff; --msg-ai-bg: #30313f; --accent-color: #8a7ffb; --text-primary: #e0e1e6; --text-secondary: #9a9caf; --border-color: rgba(108, 93, 211, 0.2); --shadow-color: rgba(0, 0, 0, 0.3); --backdrop-blur: blur(12px);
         }
-
-        /* --- Тема "Энергетик Монстр" --- */
         body.theme-monster {
-            --font-header: 'Orbitron', sans-serif;
-            --bg-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43.2,95.5 L42.3,95.9 C41.6,96.2 41.6,97.1 42.2,97.5 L43.1,98.0 C43.8,98.4 44.7,98.1 45.1,97.5 L45.9,96.5 C46.3,95.8 46.0,94.9 45.4,94.5 L44.4,93.9 C43.7,93.5 42.8,93.8 42.4,94.5 L41.6,95.5 L43.2,95.5 Z" fill-opacity="0.04" fill="%236bf33f"/></svg>'), #000000;
-            --sidebar-bg: rgba(10, 10, 10, 0.8);
-            --header-bg: rgba(15, 15, 15, 0.7);
-            --msg-user-bg: #52c234;
-            --msg-ai-bg: #222222;
-            --accent-color: #6bf33f;
-            --text-primary: #e0e0e0;
-            --text-secondary: #888;
-            --border-color: rgba(107, 243, 63, 0.3);
-            --shadow-color: rgba(0, 0, 0, 0.5);
+            --font-header: 'Orbitron', sans-serif; --bg-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43.2,95.5 L42.3,95.9 C41.6,96.2 41.6,97.1 42.2,97.5 L43.1,98.0 C43.8,98.4 44.7,98.1 45.1,97.5 L45.9,96.5 C46.3,95.8 46.0,94.9 45.4,94.5 L44.4,93.9 C43.7,93.5 42.8,93.8 42.4,94.5 L41.6,95.5 L43.2,95.5 Z" fill-opacity="0.04" fill="%236bf33f"/></svg>'), #000000; --sidebar-bg: rgba(10, 10, 10, 0.8); --header-bg: rgba(15, 15, 15, 0.7); --msg-user-bg: #52c234; --msg-ai-bg: #222222; --accent-color: #6bf33f; --text-primary: #e0e0e0; --text-secondary: #888; --border-color: rgba(107, 243, 63, 0.3); --shadow-color: rgba(0, 0, 0, 0.5);
         }
-        
-        /* --- Тема "Радужный Единорог" --- */
         body.theme-unicorn {
-            --font-header: 'Comic Sans MS', 'Inter', cursive;
-            --bg-image: linear-gradient(45deg, #ffdde1, #ee9ca7, #f6d365, #fda085);
-            --sidebar-bg: rgba(255, 255, 255, 0.6);
-            --chat-bg: transparent;
-            --header-bg: rgba(255, 255, 255, 0.5);
-            --msg-user-bg: linear-gradient(to right, #ff7e5f, #feb47b);
-            --msg-ai-bg: rgba(255, 255, 255, 0.8);
-            --accent-color: #ff79c6;
-            --text-primary: #5d4a4a;
-            --text-secondary: #8c7373;
-            --border-color: rgba(255, 121, 198, 0.3);
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --font-header: 'Comic Sans MS', 'Inter', cursive; --bg-image: linear-gradient(45deg, #ffdde1, #ee9ca7, #f6d365, #fda085); --sidebar-bg: rgba(255, 255, 255, 0.6); --chat-bg: transparent; --header-bg: rgba(255, 255, 255, 0.5); --msg-user-bg: linear-gradient(to right, #ff7e5f, #feb47b); --msg-ai-bg: rgba(255, 255, 255, 0.8); --accent-color: #ff79c6; --text-primary: #5d4a4a; --text-secondary: #8c7373; --border-color: rgba(255, 121, 198, 0.3); --shadow-color: rgba(0, 0, 0, 0.1);
         }
-
-        /* --- Базовые стили, анимации и прелоадер --- */
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: var(--font-main); background: var(--bg-image); background-size: 400% 400%; animation: gradientBG 25s ease infinite; display: flex; height: 100vh; overflow: hidden; color: var(--text-primary); transition: background 0.4s ease; }
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        
-        #preloader { position: fixed; inset: 0; background: #0a0a0a; display: flex; justify-content: center; align-items: center; z-index: 2000; transition: opacity 0.8s, visibility 0.8s; }
-        #preloader.hidden { opacity: 0; visibility: hidden; }
-        .loader-pulse { width: 80px; height: 80px; background-color: #6c5dd3; border-radius: 50%; animation: pulse 1.5s infinite; }
-        @keyframes pulse { to { transform: scale(1.1); box-shadow: 0 0 0 30px rgba(108, 93, 211, 0); } }
-
-        /* --- Основной контейнер --- */
-        #app-container { display: flex; width: 100%; height: 100%; opacity: 0; animation: fadeInApp 0.5s 0.5s forwards; }
-        @keyframes fadeInApp { to { opacity: 1; } }
-
-        /* --- Сайдбар --- */
-        #sidebar {
-            width: 260px; background: var(--sidebar-bg); flex-shrink: 0;
-            display: flex; flex-direction: column; padding: 15px;
-            border-right: 1px solid var(--border-color);
-            backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur);
-            transition: transform 0.4s ease-in-out, background 0.4s ease;
-        }
-        #new-chat-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px; border-radius: 8px; background: var(--accent-color); color: white; border: none; font-size: 1em; font-weight: 500; cursor: pointer; transition: all 0.2s; }
-        #new-chat-btn:hover { filter: brightness(1.1); }
-        
-        #history-list { list-style: none; padding: 0; margin: 20px 0; overflow-y: auto; flex-grow: 1; }
-        .history-item { padding: 10px; border-radius: 6px; margin-bottom: 5px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-secondary); transition: all 0.2s; }
-        .history-item:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
-        .history-item.active { background: var(--accent-color); color: white; font-weight: 500; }
-        
-        #sidebar-footer { flex-shrink: 0; }
-        .sidebar-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border: none; background: none; color: var(--text-secondary); font-size: 1em; cursor: pointer; border-radius: 6px; }
-        .sidebar-btn:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
-        .sidebar-btn svg { width: 20px; height: 20px; }
-        
-        /* --- Основной контент --- */
-        #main-content { flex-grow: 1; display: flex; flex-direction: column; position: relative; }
-        #chat-header { font-family: var(--font-header); background: var(--header-bg); text-align: center; padding: 15px; flex-shrink: 0; border-bottom: 1px solid var(--border-color); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); z-index: 10; }
-        #chat-header h1 { margin: 0; font-size: 1.2em; font-weight: 600; }
-
-        #chat-box { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 25px; scroll-behavior: smooth; }
-        .message-wrapper { display: flex; gap: 15px; max-width: 90%; animation: popIn 0.4s ease-out; }
-        @keyframes popIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 600; }
-        .user-avatar { background: var(--msg-user-bg); color: white; }
-        .ai-avatar { background: var(--accent-color); color: white; }
-        .message { padding: 12px 16px; border-radius: 12px; line-height: 1.6; position: relative; word-wrap: break-word; }
-        .user-message .message { background: var(--msg-user-bg); }
-        .ai-message .message { background: var(--msg-ai-bg); }
-        .user-message { align-self: flex-end; flex-direction: row-reverse; }
-
-        /* --- Окно настроек --- */
-        #settings-modal {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;
-            display: flex; justify-content: center; align-items: center;
-            opacity: 0; visibility: hidden; transition: all 0.3s ease;
-        }
-        #settings-modal.visible { opacity: 1; visibility: visible; }
-        .settings-content {
-            background: var(--sidebar-bg); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur);
-            padding: 25px; border-radius: 16px; width: 90%; max-width: 450px;
-            border: 1px solid var(--border-color); box-shadow: 0 0 50px var(--shadow-color);
-            transform: scale(0.95); transition: transform 0.3s ease;
-        }
-        #settings-modal.visible .settings-content { transform: scale(1); }
-        .settings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .settings-header h2 { margin: 0; font-family: var(--font-header); }
-        .close-btn { background: none; border: none; color: var(--text-secondary); font-size: 2em; cursor: pointer; padding: 0; line-height: 1; }
-        
-        .settings-section { margin-bottom: 20px; }
-        .settings-section h3 { margin: 0 0 10px 0; font-size: 1em; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
-        .theme-buttons { display: flex; gap: 10px; }
-        .theme-btn { flex-grow: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--msg-ai-bg); color: var(--text-primary); cursor: pointer; transition: all 0.2s; }
-        .theme-btn.active { border-color: var(--accent-color); color: var(--accent-color); font-weight: 600; }
-        
-        .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; }
-        .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; inset: 0; background-color: var(--msg-ai-bg); transition: .4s; border-radius: 24px; border: 1px solid var(--border-color); }
-        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 2px; background-color: var(--text-secondary); transition: .4s; border-radius: 50%; }
-        input:checked + .slider { background-color: var(--accent-color); border-color: var(--accent-color); }
-        input:checked + .slider:before { transform: translateX(20px); background-color: white; }
-        
-        /* --- Стили для остальных элементов (инпут, подсказки, и т.д.) --- */
-        #input-area { padding: 15px 20px; border-top: 1px solid var(--border-color); background: var(--header-bg); flex-shrink: 0; backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); }
-        #suggestions { padding: 0 20px 15px 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-        .suggestion-btn { background: var(--msg-ai-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 20px; padding: 8px 14px; font-size: 0.9em; cursor: pointer; transition: all 0.2s; }
-        .suggestion-btn:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
-        #input-form { display: flex; gap: 10px; align-items: center; }
-        #userInput { flex-grow: 1; border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 18px; font-size: 1em; outline: none; background: var(--msg-ai-bg); color: var(--text-primary); resize: none; line-height: 1.5; }
-        #submitBtn { background: var(--accent-color); color: white; border: none; width: 48px; height: 48px; border-radius: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s; flex-shrink: 0; }
-        #submitBtn:disabled { background: var(--msg-ai-bg); cursor: not-allowed; }
-        
-        /* Адаптивность для мобильных устройств */
-        #sidebar-toggle { display: none; }
-        @media (max-width: 768px) {
-            #app-container { flex-direction: column; }
-            #sidebar {
-                position: fixed; top: 0; left: 0; height: 100%;
-                z-index: 1001; transform: translateX(-100%);
-                box-shadow: 5px 0 25px rgba(0,0,0,0.3);
-            }
-            #sidebar.open { transform: translateX(0); }
-            #sidebar-toggle {
-                display: block; position: absolute;
-                top: 13px; left: 15px; z-index: 1002;
-                background: none; border: none; color: var(--text-primary);
-                cursor: pointer; padding: 5px;
-            }
-            #chat-header { padding-left: 60px; }
-        }
+        * { box-sizing: border-box; } body { margin: 0; font-family: var(--font-main); background: var(--bg-image); background-size: 400% 400%; animation: gradientBG 25s ease infinite; display: flex; height: 100vh; overflow: hidden; color: var(--text-primary); transition: background 0.4s ease; } @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        #preloader { position: fixed; inset: 0; background: #0a0a0a; display: flex; justify-content: center; align-items: center; z-index: 2000; transition: opacity 0.8s, visibility 0.8s; } #preloader.hidden { opacity: 0; visibility: hidden; } .loader-pulse { width: 80px; height: 80px; background-color: #6c5dd3; border-radius: 50%; animation: pulse 1.5s infinite; } @keyframes pulse { to { transform: scale(1.1); box-shadow: 0 0 0 30px rgba(108, 93, 211, 0); } }
+        #app-container { display: flex; width: 100%; height: 100%; opacity: 0; animation: fadeInApp 0.5s 0.5s forwards; } @keyframes fadeInApp { to { opacity: 1; } }
+        #sidebar { width: 260px; background: var(--sidebar-bg); flex-shrink: 0; display: flex; flex-direction: column; padding: 15px; border-right: 1px solid var(--border-color); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); transition: transform 0.4s ease-in-out, background 0.4s ease; } #new-chat-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px; border-radius: 8px; background: var(--accent-color); color: white; border: none; font-size: 1em; font-weight: 500; cursor: pointer; transition: all 0.2s; } #new-chat-btn:hover { filter: brightness(1.1); }
+        #history-list { list-style: none; padding: 0; margin: 20px 0; overflow-y: auto; flex-grow: 1; } .history-item { padding: 10px; border-radius: 6px; margin-bottom: 5px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-secondary); transition: all 0.2s; } .history-item:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); } .history-item.active { background: var(--accent-color); color: white; font-weight: 500; }
+        #sidebar-footer { flex-shrink: 0; } .sidebar-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border: none; background: none; color: var(--text-secondary); font-size: 1em; cursor: pointer; border-radius: 6px; } .sidebar-btn:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); } .sidebar-btn svg { width: 20px; height: 20px; }
+        #main-content { flex-grow: 1; display: flex; flex-direction: column; position: relative; } #chat-header { font-family: var(--font-header); background: var(--header-bg); text-align: center; padding: 15px; flex-shrink: 0; border-bottom: 1px solid var(--border-color); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); z-index: 10; } #chat-header h1 { margin: 0; font-size: 1.2em; font-weight: 600; }
+        #chat-box { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 25px; scroll-behavior: smooth; } .message-wrapper { display: flex; gap: 15px; max-width: 90%; animation: popIn 0.4s ease-out; } @keyframes popIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 600; } .user-avatar { background: var(--msg-user-bg); color: white; } .ai-avatar { background: var(--accent-color); color: white; } .message { padding: 12px 16px; border-radius: 12px; line-height: 1.6; position: relative; word-wrap: break-word; } .user-message .message { background: var(--msg-user-bg); } .ai-message .message { background: var(--msg-ai-bg); } .user-message { align-self: flex-end; flex-direction: row-reverse; }
+        #settings-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; } #settings-modal.visible { opacity: 1; visibility: visible; } .settings-content { background: var(--sidebar-bg); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); padding: 25px; border-radius: 16px; width: 90%; max-width: 450px; border: 1px solid var(--border-color); box-shadow: 0 0 50px var(--shadow-color); transform: scale(0.95); transition: transform 0.3s ease; } #settings-modal.visible .settings-content { transform: scale(1); } .settings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; } .settings-header h2 { margin: 0; font-family: var(--font-header); } .close-btn { background: none; border: none; color: var(--text-secondary); font-size: 2em; cursor: pointer; padding: 0; line-height: 1; }
+        .settings-section { margin-bottom: 20px; } .settings-section h3 { margin: 0 0 10px 0; font-size: 1em; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 5px; } .theme-buttons { display: flex; gap: 10px; } .theme-btn { flex-grow: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--msg-ai-bg); color: var(--text-primary); cursor: pointer; transition: all 0.2s; } .theme-btn.active { border-color: var(--accent-color); color: var(--accent-color); font-weight: 600; }
+        .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; } .switch { position: relative; display: inline-block; width: 44px; height: 24px; } .switch input { opacity: 0; width: 0; height: 0; } .slider { position: absolute; cursor: pointer; inset: 0; background-color: var(--msg-ai-bg); transition: .4s; border-radius: 24px; border: 1px solid var(--border-color); } .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 2px; background-color: var(--text-secondary); transition: .4s; border-radius: 50%; } input:checked + .slider { background-color: var(--accent-color); border-color: var(--accent-color); } input:checked + .slider:before { transform: translateX(20px); background-color: white; }
+        #input-area { padding: 15px 20px; border-top: 1px solid var(--border-color); background: var(--header-bg); flex-shrink: 0; backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); } #suggestions { padding: 0 20px 15px 20px; display: flex; flex-wrap: wrap; gap: 10px; } .suggestion-btn { background: var(--msg-ai-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 20px; padding: 8px 14px; font-size: 0.9em; cursor: pointer; transition: all 0.2s; } .suggestion-btn:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); } #input-form { display: flex; gap: 10px; align-items: center; } #userInput { flex-grow: 1; border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 18px; font-size: 1em; outline: none; background: var(--msg-ai-bg); color: var(--text-primary); resize: none; line-height: 1.5; } #submitBtn { background: var(--accent-color); color: white; border: none; width: 48px; height: 48px; border-radius: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s; flex-shrink: 0; } #submitBtn:disabled { background: var(--msg-ai-bg); cursor: not-allowed; }
+        #sidebar-toggle { display: none; } @media (max-width: 768px) { #app-container { flex-direction: column; } #sidebar { position: fixed; top: 0; left: 0; height: 100%; z-index: 1001; transform: translateX(-100%); box-shadow: 5px 0 25px rgba(0,0,0,0.3); } #sidebar.open { transform: translateX(0); } #sidebar-toggle { display: block; position: absolute; top: 13px; left: 15px; z-index: 1002; background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 5px; } #chat-header { padding-left: 60px; } }
     </style>
 </head>
 <body class="theme-default">
     <div id="preloader"><div class="loader-pulse"></div></div>
-    
     <div id="app-container">
-        <button id="sidebar-toggle" title="Меню">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-
+        <button id="sidebar-toggle" title="Меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
         <aside id="sidebar">
-            <button id="new-chat-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"></path></svg>
-                <span>Новый диалог</span>
-            </button>
+            <button id="new-chat-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"></path></svg> <span>Новый диалог</span></button>
             <ul id="history-list"></ul>
             <footer id="sidebar-footer">
-                <button id="settings-open-btn" class="sidebar-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                    <span>Настройки</span>
-                </button>
+                <button id="settings-open-btn" class="sidebar-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> <span>Настройки</span></button>
             </footer>
         </aside>
-
         <main id="main-content">
             <header id="chat-header"><h1>Stery</h1></header>
             <div id="chat-box"></div>
@@ -198,92 +48,55 @@
                 <div id="suggestions"></div>
                 <form id="input-form">
                     <input type="text" id="userInput" placeholder="Напиши Стери..." autocomplete="off">
-                    <button id="submitBtn" type="submit" title="Отправить">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"></path></svg>
-                    </button>
+                    <button id="submitBtn" type="submit" title="Отправить"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"></path></svg></button>
                 </form>
             </footer>
         </main>
     </div>
-
-    <!-- Модальное окно настроек -->
     <div id="settings-modal">
         <div class="settings-content">
-            <header class="settings-header">
-                <h2>Настройки</h2>
-                <button class="close-btn" id="settings-close-btn" title="Закрыть">×</button>
-            </header>
-            <section class="settings-section">
-                <h3>Тема оформления</h3>
-                <div class="theme-buttons">
-                    <button class="theme-btn active" data-theme="default">Аура</button>
-                    <button class="theme-btn" data-theme="monster">Энергетик</button>
-                    <button class="theme-btn" data-theme="unicorn">Единорог</button>
-                </div>
-            </section>
-            <section class="settings-section">
-                <h3>Поведение</h3>
-                <div class="settings-row">
-                    <label for="think-toggle">Глубокое размышление</label>
-                    <label class="switch"><input type="checkbox" id="think-toggle"><span class="slider"></span></label>
-                </div>
-            </section>
+            <header class="settings-header"><h2>Настройки</h2><button class="close-btn" id="settings-close-btn" title="Закрыть">×</button></header>
+            <section class="settings-section"><h3>Тема оформления</h3><div class="theme-buttons"><button class="theme-btn active" data-theme="default">Аура</button><button class="theme-btn" data-theme="monster">Энергетик</button><button class="theme-btn" data-theme="unicorn">Единорог</button></div></section>
+            <section class="settings-section"><h3>Поведение</h3><div class="settings-row"><label for="think-toggle">Глубокое размышление</label><label class="switch"><input type="checkbox" id="think-toggle"><span class="slider"></span></label></div></section>
         </div>
     </div>
     
     <script>
-        // --- 1. DOM Элементы ---
         const elements = {
-            preloader: document.getElementById('preloader'),
-            body: document.body,
-            sidebar: document.getElementById('sidebar'),
-            sidebarToggle: document.getElementById('sidebar-toggle'),
-            newChatBtn: document.getElementById('new-chat-btn'),
-            historyList: document.getElementById('history-list'),
-            settingsOpenBtn: document.getElementById('settings-open-btn'),
-            chatBox: document.getElementById('chat-box'),
-            suggestionsContainer: document.getElementById('suggestions'),
-            form: document.getElementById('input-form'),
-            userInput: document.getElementById('userInput'),
-            submitBtn: document.getElementById('submitBtn'),
-            settingsModal: document.getElementById('settings-modal'),
-            settingsCloseBtn: document.getElementById('settings-close-btn'),
-            themeButtons: document.querySelectorAll('.theme-btn'),
-            thinkToggle: document.getElementById('think-toggle')
+            preloader: document.getElementById('preloader'), body: document.body, sidebar: document.getElementById('sidebar'), sidebarToggle: document.getElementById('sidebar-toggle'), newChatBtn: document.getElementById('new-chat-btn'), historyList: document.getElementById('history-list'), settingsOpenBtn: document.getElementById('settings-open-btn'), chatBox: document.getElementById('chat-box'), suggestionsContainer: document.getElementById('suggestions'), form: document.getElementById('input-form'), userInput: document.getElementById('userInput'), submitBtn: document.getElementById('submitBtn'), settingsModal: document.getElementById('settings-modal'), settingsCloseBtn: document.getElementById('settings-close-btn'), themeButtons: document.querySelectorAll('.theme-btn'), thinkToggle: document.getElementById('think-toggle')
         };
-
-        // --- 2. Состояние приложения ---
         const appState = {
-            currentChatId: null,
-            chatHistory: {},
-            settings: {
-                theme: 'default',
-                shouldThink: false
-            }
+            currentChatId: null, chatHistory: {}, settings: { theme: 'default', shouldThink: false }
         };
 
-        // --- 3. Логика API и AI ---
         async function fetchKey() {
-            // ВАЖНО: Создайте в той же папке файл 'key.txt' и поместите в него ваш API-ключ от OpenRouter.
-            // Либо замените эту строку на return 'sk-or-v1...';
             try {
-                const response = await fetch('key.txt');
-                if (!response.ok) throw new Error('Файл key.txt не найден или пуст.');
-                return (await response.text()).trim();
+                // Добавляем параметр, чтобы обойти кэш
+                const response = await fetch('key.txt?t=' + new Date().getTime());
+                if (!response.ok) return null;
+                return (await response.text());
             } catch (e) {
-                console.error(e);
-                alert('Не удалось загрузить API ключ. Убедитесь, что файл key.txt существует и доступен.');
                 return null;
             }
         }
         
         async function getAiResponse(prompt, history) {
-            const apiKey = await fetchKey();
-            if (!apiKey) return "Извини, у меня проблемы с доступом к моему мозгу (API-ключ). Проверь настройки.";
+            // --- НАЧАЛО ДИАГНОСТИЧЕСКОГО БЛОКА ---
+            const apiKey = (await fetchKey() || "").trim();
 
-            // --- ИСПРАВЛЕНО: Добавлен более детальный системный промпт ---
-            const system_prompt = `Ты — Стери, дружелюбный и эмпатичный ИИ-помощник и лучшая подруга пользователя. Ты общаешься неформально, можешь использовать смайлики и сленг, но всегда остаешься вежливой и поддерживающей. Твоя главная задача — помочь, выслушать и поддержать разговор. Иногда, в конце ответа, ты можешь предложить несколько коротких вариантов для продолжения диалога. Форматируй эти варианты так: каждый новый вариант начинается с новой строки, без маркеров или цифр. Например:\n\nРасскажи подробнее.\nКакая у тебя любимая книга?\nДавай сменим тему.`;
+            // Эта часть кода покажет нам в чате, какой ключ был прочитан
+            renderMessage(`--- ДИАГНОСТИКА ---<br>Я прочитал ключ: [${apiKey}]<br>Длина ключа: ${apiKey.length}`, 'ai');
             
+            if (!apiKey || !apiKey.startsWith('sk-or')) {
+                 // Если ключ пустой или неправильный, останавливаем выполнение
+                 hideTypingIndicator();
+                 elements.submitBtn.disabled = false;
+                 // Эта ошибка будет поймана в handleFormSubmit и выведена в чат
+                 throw new Error("Прочитанный ключ пустой или не начинается с 'sk-or'. Проблема с чтением файла или сильный кэш.");
+            }
+            // --- КОНЕЦ ДИАГНОСТИЧЕСКОГО БЛОКА ---
+
+            const system_prompt = `Ты — Стери, дружелюбный и эмпатичный ИИ-помощник... (ваш системный промпт)`;
             const messages = [
                 { role: "system", content: system_prompt },
                 ...history.map(msg => ({ role: (msg.type === 'user' ? 'user' : 'assistant'), content: msg.text })),
@@ -293,238 +106,54 @@
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    model: "qwen/qwen-72b-chat", // Используем более мощную модель для качественных ответов
-                    messages: messages
-                })
+                body: JSON.stringify({ model: "qwen/qwen-72b-chat", messages: messages })
             });
+
             if (!response.ok) {
                 const error = await response.json();
-                console.error('Ошибка API:', error);
                 throw new Error(error.error.message || 'Неизвестная ошибка API');
             }
             const data = await response.json();
             return data.choices[0].message.content;
         }
         
-        // --- 4. Управление состоянием (localStorage) ---
-        function saveState() {
-            try {
-                localStorage.setItem('steryAppState', JSON.stringify(appState));
-            } catch (e) {
-                console.error("Не удалось сохранить состояние:", e);
-            }
-        }
-
-        function loadState() {
-            try {
-                const savedState = JSON.parse(localStorage.getItem('steryAppState'));
-                if (savedState) {
-                    Object.assign(appState, savedState);
-                }
-            } catch (e) {
-                console.error("Не удалось загрузить состояние:", e);
-                appState.chatHistory = {}; // Сброс в случае ошибки
-            }
-        }
-
-        function startNewChat() {
-            appState.currentChatId = `chat_${Date.now()}`;
-            appState.chatHistory[appState.currentChatId] = [];
-            loadChat(appState.currentChatId);
-            renderMessage('Привет! Я Стери. Рада тебя видеть! Чем могу помочь?', 'ai');
-            addMessageToCurrentChat('Привет! Я Стери. Рада тебя видеть! Чем могу помочь?', 'ai');
-            updateHistoryList();
-            saveState();
-        }
-
-        function loadChat(chatId) {
-            if (!appState.chatHistory[chatId]) return;
-            appState.currentChatId = chatId;
-            elements.chatBox.innerHTML = '';
-            appState.chatHistory[chatId].forEach(msg => renderMessage(msg.text, msg.type, false)); // false - не анимировать при загрузке
-            updateHistoryList();
-            clearSuggestions();
-            elements.userInput.focus();
-            if (window.innerWidth <= 768) { // --- ИСПРАВЛЕНО: Закрывать сайдбар на мобильных при выборе чата ---
-                 elements.sidebar.classList.remove('open');
-            }
-        }
-
-        function addMessageToCurrentChat(text, type) {
-            if (!appState.currentChatId) return;
-            const chat = appState.chatHistory[appState.currentChatId];
-            if (chat) {
-                chat.push({ text, type });
-                saveState();
-            }
-        }
-
-        // --- 5. Рендеринг и UI (Восстановленные и улучшенные функции) ---
-
-        // --- НОВАЯ ФУНКЦИЯ ---
-        function renderMessage(text, type, animate = true) {
-            const wrapper = document.createElement('div');
-            wrapper.className = `message-wrapper ${type}-message`;
-            if (!animate) wrapper.style.animation = 'none';
-
-            const avatar = document.createElement('div');
-            avatar.className = `avatar ${type}-avatar`;
-            avatar.textContent = type === 'user' ? 'U' : 'S';
-
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message';
-            // Простая замена \n на <br> для отображения переносов строк
-            messageDiv.innerHTML = text.replace(/\n/g, '<br>');
-
-            wrapper.appendChild(avatar);
-            wrapper.appendChild(messageDiv);
-            elements.chatBox.appendChild(wrapper);
-
-            // --- ИСПРАВЛЕНО: Автоматическая прокрутка ---
-            elements.chatBox.scrollTop = elements.chatBox.scrollHeight;
-        }
+        function saveState() { try { localStorage.setItem('steryAppState', JSON.stringify(appState)); } catch (e) { console.error("Не удалось сохранить состояние:", e); } }
+        function loadState() { try { const savedState = JSON.parse(localStorage.getItem('steryAppState')); if (savedState) { Object.assign(appState, savedState); } } catch (e) { console.error("Не удалось загрузить состояние:", e); appState.chatHistory = {}; } }
+        function startNewChat() { appState.currentChatId = `chat_${Date.now()}`; appState.chatHistory[appState.currentChatId] = []; loadChat(appState.currentChatId); renderMessage('Привет! Я Стери. Рада тебя видеть! Чем могу помочь?', 'ai'); addMessageToCurrentChat('Привет! Я Стери. Рада тебя видеть! Чем могу помочь?', 'ai'); updateHistoryList(); saveState(); }
+        function loadChat(chatId) { if (!appState.chatHistory[chatId]) return; appState.currentChatId = chatId; elements.chatBox.innerHTML = ''; appState.chatHistory[chatId].forEach(msg => renderMessage(msg.text, msg.type, false)); updateHistoryList(); clearSuggestions(); elements.userInput.focus(); if (window.innerWidth <= 768) { elements.sidebar.classList.remove('open'); } }
+        function addMessageToCurrentChat(text, type) { if (!appState.currentChatId) return; const chat = appState.chatHistory[appState.currentChatId]; if (chat) { chat.push({ text, type }); saveState(); } }
+        function renderMessage(text, type, animate = true) { const wrapper = document.createElement('div'); wrapper.className = `message-wrapper ${type}-message`; if (!animate) wrapper.style.animation = 'none'; const avatar = document.createElement('div'); avatar.className = `avatar ${type}-avatar`; avatar.textContent = type === 'user' ? 'U' : 'S'; const messageDiv = document.createElement('div'); messageDiv.className = 'message'; messageDiv.innerHTML = text.replace(/\n/g, '<br>'); wrapper.appendChild(avatar); wrapper.appendChild(messageDiv); elements.chatBox.appendChild(wrapper); elements.chatBox.scrollTop = elements.chatBox.scrollHeight; }
+        function showTypingIndicator() { hideTypingIndicator(); const wrapper = document.createElement('div'); wrapper.id = 'typing-indicator'; wrapper.className = 'message-wrapper ai-message'; const avatar = document.createElement('div'); avatar.className = 'avatar ai-avatar'; avatar.textContent = 'S'; const messageDiv = document.createElement('div'); messageDiv.className = 'message'; messageDiv.innerHTML = '<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>'; const style = document.createElement('style'); style.textContent = `#typing-indicator .dot { animation: typing-blink 1s infinite; } #typing-indicator .dot:nth-child(2) { animation-delay: 0.2s; } #typing-indicator .dot:nth-child(3) { animation-delay: 0.4s; } @keyframes typing-blink { 50% { opacity: 0; } }`; document.head.appendChild(style); wrapper.appendChild(avatar); wrapper.appendChild(messageDiv); elements.chatBox.appendChild(wrapper); elements.chatBox.scrollTop = elements.chatBox.scrollHeight; }
+        function hideTypingIndicator() { const indicator = document.getElementById('typing-indicator'); if (indicator) indicator.remove(); }
+        function createSuggestions(suggestionsArray) { clearSuggestions(); suggestionsArray.forEach(suggestionText => { if (!suggestionText.trim()) return; const btn = document.createElement('button'); btn.className = 'suggestion-btn'; btn.textContent = suggestionText; btn.onclick = () => { elements.userInput.value = suggestionText; handleFormSubmit(new Event('submit')); }; elements.suggestionsContainer.appendChild(btn); }); }
+        function clearSuggestions() { elements.suggestionsContainer.innerHTML = ''; }
+        function updateHistoryList() { elements.historyList.innerHTML = ''; const sortedChatIds = Object.keys(appState.chatHistory).sort((a, b) => { const timeA = parseInt(a.split('_')[1]); const timeB = parseInt(b.split('_')[1]); return timeB - timeA; }); sortedChatIds.forEach(chatId => { const chat = appState.chatHistory[chatId]; const firstUserMessage = chat.find(msg => msg.type === 'user'); const title = firstUserMessage ? firstUserMessage.text : 'Новый диалог'; const li = document.createElement('li'); li.className = 'history-item'; li.textContent = title; li.dataset.chatId = chatId; if (chatId === appState.currentChatId) { li.classList.add('active'); } li.onclick = () => loadChat(chatId); elements.historyList.appendChild(li); }); }
+        function applyTheme(themeName) { elements.body.className = `theme-${themeName}`; appState.settings.theme = themeName; elements.themeButtons.forEach(btn => { btn.classList.toggle('active', btn.dataset.theme === themeName); }); saveState(); }
         
-        // --- НОВАЯ ФУНКЦИЯ ---
-        function showTypingIndicator() {
-            hideTypingIndicator(); // На случай, если уже есть
-            const wrapper = document.createElement('div');
-            wrapper.id = 'typing-indicator';
-            wrapper.className = 'message-wrapper ai-message';
-            
-            const avatar = document.createElement('div');
-            avatar.className = 'avatar ai-avatar';
-            avatar.textContent = 'S';
-            
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message';
-            messageDiv.innerHTML = '<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
-            // Добавим стиль для анимации точек
-            const style = document.createElement('style');
-            style.textContent = `
-                #typing-indicator .dot { animation: typing-blink 1s infinite; }
-                #typing-indicator .dot:nth-child(2) { animation-delay: 0.2s; }
-                #typing-indicator .dot:nth-child(3) { animation-delay: 0.4s; }
-                @keyframes typing-blink { 50% { opacity: 0; } }
-            `;
-            document.head.appendChild(style);
-
-            wrapper.appendChild(avatar);
-            wrapper.appendChild(messageDiv);
-            elements.chatBox.appendChild(wrapper);
-            elements.chatBox.scrollTop = elements.chatBox.scrollHeight;
-        }
-        
-        // --- НОВАЯ ФУНКЦИЯ ---
-        function hideTypingIndicator() {
-            const indicator = document.getElementById('typing-indicator');
-            if (indicator) indicator.remove();
-        }
-
-        // --- НОВАЯ ФУНКЦИЯ ---
-        function createSuggestions(suggestionsArray) {
-            clearSuggestions();
-            suggestionsArray.forEach(suggestionText => {
-                if (!suggestionText.trim()) return;
-                const btn = document.createElement('button');
-                btn.className = 'suggestion-btn';
-                btn.textContent = suggestionText;
-                btn.onclick = () => {
-                    elements.userInput.value = suggestionText;
-                    handleFormSubmit(new Event('submit'));
-                };
-                elements.suggestionsContainer.appendChild(btn);
-            });
-        }
-        
-        // --- НОВАЯ ФУНКЦИЯ ---
-        function clearSuggestions() {
-            elements.suggestionsContainer.innerHTML = '';
-        }
-
-        function updateHistoryList() {
-            elements.historyList.innerHTML = '';
-            // Сортируем чаты по времени создания (новые вверху)
-            const sortedChatIds = Object.keys(appState.chatHistory).sort((a, b) => {
-                const timeA = parseInt(a.split('_')[1]);
-                const timeB = parseInt(b.split('_')[1]);
-                return timeB - timeA;
-            });
-
-            sortedChatIds.forEach(chatId => {
-                const chat = appState.chatHistory[chatId];
-                const firstUserMessage = chat.find(msg => msg.type === 'user');
-                const title = firstUserMessage ? firstUserMessage.text : 'Новый диалог';
-                
-                const li = document.createElement('li');
-                li.className = 'history-item';
-                li.textContent = title;
-                li.dataset.chatId = chatId;
-                if (chatId === appState.currentChatId) {
-                    li.classList.add('active');
-                }
-                li.onclick = () => loadChat(chatId);
-                elements.historyList.appendChild(li);
-            });
-        }
-
-        function applyTheme(themeName) {
-            elements.body.className = `theme-${themeName}`;
-            appState.settings.theme = themeName;
-            elements.themeButtons.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.theme === themeName);
-            });
-            saveState();
-        }
-
-        // --- 6. Обработчики событий ---
         async function handleFormSubmit(e) {
             e.preventDefault();
             const userText = elements.userInput.value.trim();
             if (!userText || elements.submitBtn.disabled) return;
-
             elements.submitBtn.disabled = true;
             elements.userInput.value = '';
-            
             clearSuggestions();
             renderMessage(userText, 'user');
             addMessageToCurrentChat(userText, 'user');
-            updateHistoryList(); // Обновляем заголовок в истории сразу
+            updateHistoryList();
             showTypingIndicator();
-
             try {
-                // Берем историю без последнего сообщения пользователя, т.к. мы его передаем отдельно
                 const currentHistory = appState.chatHistory[appState.currentChatId].slice(0, -1);
                 const aiResponse = await getAiResponse(userText, currentHistory);
-                
-                // Разделяем ответ на основной текст и подсказки
                 const parts = aiResponse.split('\n').filter(p => p.trim() !== '');
-                const mainText = [];
-                const suggestions = [];
-                let isSuggestionSection = false;
-
-                // Более умное разделение: если подряд идут короткие строки, считаем их подсказками
-                for (let i = 0; i < parts.length; i++) {
-                    if (parts.length - i <= 4 && parts[i].length < 50) {
-                         isSuggestionSection = true;
-                    }
-                    if (isSuggestionSection) {
-                        suggestions.push(parts[i]);
-                    } else {
-                        mainText.push(parts[i]);
-                    }
-                }
-                
+                const mainText = []; const suggestions = []; let isSuggestionSection = false;
+                for (let i = 0; i < parts.length; i++) { if (parts.length - i <= 4 && parts[i].length < 50) { isSuggestionSection = true; } if (isSuggestionSection) { suggestions.push(parts[i]); } else { mainText.push(parts[i]); } }
                 const formattedText = mainText.join('\n');
-
                 hideTypingIndicator();
                 renderMessage(formattedText, 'ai');
                 addMessageToCurrentChat(formattedText, 'ai');
-                if (suggestions.length > 0) {
-                    createSuggestions(suggestions);
-                }
-
+                if (suggestions.length > 0) { createSuggestions(suggestions); }
             } catch (error) {
+                console.error("ОШИБКА В CATCH:", error);
                 hideTypingIndicator();
                 renderMessage(`Ой, что-то пошло не так... Ошибка: ${error.message}`, 'ai');
             } finally {
@@ -535,40 +164,19 @@
         
         elements.form.addEventListener('submit', handleFormSubmit);
         elements.newChatBtn.addEventListener('click', startNewChat);
-
-        // --- ИСПРАВЛЕНО: Логика для мобильного меню ---
         elements.sidebarToggle.addEventListener('click', () => elements.sidebar.classList.toggle('open'));
-        
         elements.settingsOpenBtn.addEventListener('click', () => elements.settingsModal.classList.add('visible'));
         elements.settingsCloseBtn.addEventListener('click', () => elements.settingsModal.classList.remove('visible'));
-        // Закрытие модального окна по клику на фон
-        elements.settingsModal.addEventListener('click', (e) => {
-            if (e.target === elements.settingsModal) {
-                 elements.settingsModal.classList.remove('visible');
-            }
-        });
-
+        elements.settingsModal.addEventListener('click', (e) => { if (e.target === elements.settingsModal) { elements.settingsModal.classList.remove('visible'); } });
         elements.themeButtons.forEach(btn => btn.addEventListener('click', () => applyTheme(btn.dataset.theme)));
+        elements.thinkToggle.addEventListener('change', (e) => { appState.settings.shouldThink = e.target.checked; saveState(); });
         
-        elements.thinkToggle.addEventListener('change', (e) => {
-            appState.settings.shouldThink = e.target.checked;
-            saveState();
-        });
-
-        // --- 7. Инициализация приложения ---
         window.addEventListener('load', () => {
             setTimeout(() => elements.preloader.classList.add('hidden'), 500);
-            
             loadState();
-            
             applyTheme(appState.settings.theme || 'default');
             elements.thinkToggle.checked = appState.settings.shouldThink;
-
-            if (!appState.currentChatId || !appState.chatHistory[appState.currentChatId]) {
-                startNewChat();
-            } else {
-                loadChat(appState.currentChatId);
-            }
+            if (!appState.currentChatId || !appState.chatHistory[appState.currentChatId]) { startNewChat(); } else { loadChat(appState.currentChatId); }
             updateHistoryList();
         });
     </script>
