@@ -71,7 +71,6 @@
 
         async function fetchKey() {
             try {
-                // Добавляем параметр, чтобы обойти кэш
                 const response = await fetch('key.txt?t=' + new Date().getTime());
                 if (!response.ok) return null;
                 return (await response.text());
@@ -81,22 +80,14 @@
         }
         
         async function getAiResponse(prompt, history) {
-            // --- НАЧАЛО ДИАГНОСТИЧЕСКОГО БЛОКА ---
-            const apiKey = (await fetchKey() || "").trim();
-
-            // Эта часть кода покажет нам в чате, какой ключ был прочитан
-            renderMessage(`--- ДИАГНОСТИКА ---<br>Я прочитал ключ: [${apiKey}]<br>Длина ключа: ${apiKey.length}`, 'ai');
+            // Читаем ключ и удаляем пробелы И невидимый символ BOM (\uFEFF)
+            const apiKey = (await fetchKey() || "").trim().replace(/^\uFEFF/, '');
             
             if (!apiKey || !apiKey.startsWith('sk-or')) {
-                 // Если ключ пустой или неправильный, останавливаем выполнение
-                 hideTypingIndicator();
-                 elements.submitBtn.disabled = false;
-                 // Эта ошибка будет поймана в handleFormSubmit и выведена в чат
-                 throw new Error("Прочитанный ключ пустой или не начинается с 'sk-or'. Проблема с чтением файла или сильный кэш.");
+                 throw new Error("Ключ пустой или неверный. Проверьте содержимое файла key.txt.");
             }
-            // --- КОНЕЦ ДИАГНОСТИЧЕСКОГО БЛОКА ---
 
-            const system_prompt = `Ты — Стери, дружелюбный и эмпатичный ИИ-помощник... (ваш системный промпт)`;
+            const system_prompt = `Ты — Стери, дружелюбный и эмпатичный ИИ-помощник. Твоя главная задача — помочь, выслушать и поддержать разговор.`;
             const messages = [
                 { role: "system", content: system_prompt },
                 ...history.map(msg => ({ role: (msg.type === 'user' ? 'user' : 'assistant'), content: msg.text })),
@@ -110,8 +101,9 @@
             });
 
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.error.message || 'Неизвестная ошибка API');
+                const errorData = await response.json();
+                // Выводим более подробную ошибку от сервера
+                throw new Error(errorData.error.message || 'Неизвестная ошибка API');
             }
             const data = await response.json();
             return data.choices[0].message.content;
