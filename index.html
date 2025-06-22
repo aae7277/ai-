@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stery - Финальный Тест</title>
+    <title>Stery - Работает!</title>
     <style>
-        /* Все стили остаются такими же, как и раньше. */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700&display=swap');
         :root {
             --font-main: 'Inter', sans-serif; --font-header: 'Inter', sans-serif; --bg-image: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1f2e); --sidebar-bg: rgba(20, 20, 35, 0.7); --chat-bg: transparent; --header-bg: rgba(35, 35, 55, 0.6); --msg-user-bg: #4a4dff; --msg-ai-bg: #30313f; --accent-color: #8a7ffb; --text-primary: #e0e1e6; --text-secondary: #9a9caf; --border-color: rgba(108, 93, 211, 0.2); --shadow-color: rgba(0, 0, 0, 0.3); --backdrop-blur: blur(12px);
@@ -82,11 +81,14 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // САМЫЙ НАДЕЖНЫЙ ТЕСТ: КЛЮЧ ВСТАВЛЕН НАПРЯМУЮ ЗДЕСЬ
-                    // Замените 'sk-or-v1...' на ваш настоящий ключ
-                    'Authorization': 'Bearer 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'
+                    // ВАЖНО: Вставьте ваш ключ прямо сюда
+                    'Authorization': 'Bearer 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'
                 },
-                body: JSON.stringify({ model: "qwen/qwen-72b-chat", messages: messages })
+                body: JSON.stringify({
+                    // Указываем ID модели, которую вы выбрали
+                    model: "google/gemini-flash-1.5", 
+                    messages: messages
+                })
             });
 
             if (!response.ok) {
